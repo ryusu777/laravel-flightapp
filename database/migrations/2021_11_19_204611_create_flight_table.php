@@ -13,7 +13,7 @@ class CreateFlightTable extends Migration
      */
     public function up()
     {
-        Schema::create('tr_flight', function (Blueprint $table) {
+        Schema::create('flight', function (Blueprint $table) {
             $table->id();
             $table->string('plane_code');
             $table->string('depature');
@@ -32,6 +32,6 @@ class CreateFlightTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tr_flight');
+        Schema::dropIfExists('flight');
     }
 }
