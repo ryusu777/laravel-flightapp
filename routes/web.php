@@ -25,7 +25,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::prefix('admin')->group(function () {
+    Route::middleware(['role:admin'])->group(function () {
+        Route::get('flight', Flights::class)->name('flight');
+    });
+});
 
-Route::get('payment', Payments::class);
-
-Route::get('flight', Flights::class);
+Route::get('payment', Payments::class)->name('payment');
