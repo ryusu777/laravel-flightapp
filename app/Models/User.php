@@ -41,6 +41,10 @@ class User extends Authenticatable
         'two_factor_secret',
     ];
 
+    protected $attributes = [
+        'role_id' => 2
+    ];
+
     /**
      * The attributes that should be cast.
      *
